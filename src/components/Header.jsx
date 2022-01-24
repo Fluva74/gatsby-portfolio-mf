@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-
+import ToolBar from '@material-ui/core/ToolBar';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
 import Hidden from '@material-ui/core/Hidden';
@@ -43,7 +43,7 @@ export default function Header() {
         <>
             <AppBar position="sticky" color="default">
                 <Container maxWidth="md">
-                   
+                    <ToolBar disableGutters>
                         <Avatar className={styles.avatar}>MF</Avatar>
                         <Hidden xsDown>
                         {navigationLinks.map((item) => (
@@ -60,7 +60,7 @@ export default function Header() {
                                 <MenuIcon onClick={() => setOpen(true)} />
                         </IconButton>
                         </Hidden>
-           
+            </ToolBar>  
                 </Container>
                 <SwipeableDrawer
                     anchor="right"
