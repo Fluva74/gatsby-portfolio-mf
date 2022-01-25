@@ -16,7 +16,7 @@ darkTheme = responsiveFontSizes(darkTheme)
 
 export default function indexPage() {
   return <ThemeProvider theme={darkTheme}>
-    <CssBaseLine />
+    <CssBaseline />
     <Header />
     <HeroSection />
     <Projects />
