@@ -1,5 +1,5 @@
 import React from 'react';
-import { createTheme, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import HeroSection from '../components/HeroSection';
 import Header from '../components/Header';
@@ -14,13 +14,14 @@ let darkTheme = createTheme({
 });
 darkTheme = responsiveFontSizes(darkTheme)
 
-export default function indexPage() {
-  return <ThemeProvider theme={darkTheme}>
-    <CssBaseline />
-    <Header />
-    <HeroSection />
-    <Projects />
-  </ThemeProvider>;
+export default function IndexPage() {
+  if (typeof window !== "undefined") {
+    return <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
+      <Header />
+      <HeroSection />
+      <Projects />
+    </ThemeProvider>;
+  }
 }
-
 

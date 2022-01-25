@@ -1,18 +1,18 @@
 import React from 'react';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import OpenInNewIcon from '@material-ui/icons/OpenInNew';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Chip from '@material-ui/core/Chip';
-import Hidden from '@material-ui/core/Hidden';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import { makeStyles } from '@mui/styles';
+import IconButton from '@mui/material/IconButton';
+import Chip from '@mui/material/Chip';
+import Hidden from '@mui/material/Hidden';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -104,21 +104,23 @@ function Project({ title, description, imageUrl, tags, links }) {
 
 
 export default function Projects() {
-    const styles = useStyles()
-    return (
-        <Container maxWidth="md" id="projects">
-            <Box pt={8} mb={2}>
-            <Typography className={styles.mainTitle} variant="h4">Projects</Typography>
-            </Box>
+    if (typeof window !== "undefined") {
+        const styles = useStyles()
+        return (
+            <Container maxWidth="md" id="projects">
+                <Box pt={8} mb={2}>
+                    <Typography className={styles.mainTitle} variant="h4">Projects</Typography>
+                </Box>
            
-            <Grid container direction='column' spacing={4}>
-                {projectsData.map((data) => (
-                    <Project {...data} />
-                ))}
-            </Grid>
-        </Container>
+                <Grid container direction='column' spacing={4}>
+                    {projectsData.map((data) => (
+                        <Project {...data} />
+                    ))}
+                </Grid>
+            </Container>
 
-    )
+        )
+    }
 }
 
 
