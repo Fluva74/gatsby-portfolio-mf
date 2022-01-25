@@ -1,6 +1,6 @@
 import React from 'react';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
-import CssBaseLine from '@material-ui/core/CssBaseLine'
+import CssBaseline from '@mui/material/CssBaseline';
 import HeroSection from '../components/HeroSection';
 import Header from '../components/Header';
 import Projects from '../components/Projects';
